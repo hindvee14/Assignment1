@@ -1,0 +1,575 @@
+<html>
+    <head>
+        <title>Welcome Bookwormz !</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <style>
+            body {
+              margin: 0;
+              padding: 0;
+              font-family: Arial, sans-serif;
+              
+            }
+
+            body.dark-mode {
+              background-color: #000000;
+              color: #ffffff;
+          }
+            
+            .navbar{
+                position: fixed;
+                display: flex;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #F45050;
+                color: #F0F0F0;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: row;
+                z-index: 999;
+
+            }
+
+            .navbar a {
+                text-decoration: none;
+                color: #F0F0F0;
+                padding: 10px;
+              }
+
+            .bkstore {
+              background-color: #F9D949;
+              height: 600px;
+              
+            }
+            .intro-container {
+              display: flex;
+              height: 100vh;
+            }
+            
+            .cover-section {
+              flex: 1;
+              background-color: #F9D949;
+              display: flex;
+              justify-content: center;
+              align-items: stretch;
+              height: 525px;
+              width: 800px;
+              margin-top: 50px;
+              left: 0;
+            }
+            
+            .cover-image {
+              max-width: 100%;
+              max-height: 100%;
+            }
+            
+            .info-section {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-end;
+              padding: 40px;
+              background-color: #F9D949;
+      
+              color: #3C486B;
+              height: 500px;
+              width: 800px;
+            }
+            
+            .shop-name {
+              padding: 30px;
+              font-weight: bold;
+              margin-bottom: 10px;
+              font-size: 60px;
+              font-family: cursive, "Lucida Handwritten"; 
+            }
+            
+            .subtitle {
+              font-size: 20px;
+              
+              
+            }
+            
+            .button {
+              padding: 10px 20px;
+              background-color: #F45050;
+              color: #F0F0F0;
+              text-decoration: none;
+              border-radius: 4px;
+              font-weight: bold;
+            }
+
+            .best{
+              font-size: 45px;
+              max-height: 300px;
+              max-width: 440px;
+              margin-left: 40px;
+              color:#f45050;
+            }
+        
+            .best1{
+              margin-left: 30px;
+            }
+
+            .cards{
+              display: flex;
+              flex-direction: row;
+              
+              color:  #3C486B;
+            }
+
+            .card{
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: column;
+              justify-content: flex-end;
+              position: relative;
+              background-color: #3C486B; 
+            }
+
+            .c{
+              margin: 100px;
+              display: flex;
+              flex-direction: column;
+              position: relative;
+            }
+
+            .type{
+              display: flex;
+              flex-direction: row;
+              align-items: flex-end;
+            }
+            
+            .price{
+              align-self: flex-end;
+              
+              padding: 5px 10px;
+              font-weight: bold;
+            }
+
+            .Focus{
+              padding: 7px 0px;
+              background-color: #F45050;
+              color: #F0F0F0;
+              text-decoration: none;
+              border-radius: 4px;
+              font-weight: bold;
+              border:hidden;
+            }
+
+            .Focus:active {
+              background-color: #45a049; 
+              
+              
+            }
+
+            .rev{
+              padding: 10px;
+            }
+            
+            .review-card {
+              display: flex;
+              align-items: flex-start;
+              border: 1px solid #ccc;
+              background-color: #F9D949; !important
+              border-radius: 5px;
+              padding: 20px;
+              margin: 10px;
+            }
+
+            .review-card img {
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-right: 20px;
+              background-color: #F9D949; !important
+            }
+
+            .review-details {
+              flex-grow: 1;
+            }
+
+            .review-details h3 {
+              margin-top: 0;
+            }
+
+            .review-details p {
+              margin-bottom: 0;
+            }
+
+            .review-form {
+              display: "block";
+              color:#3C486B;
+              
+              padding: 100px;
+              
+              
+            }
+            
+            .review-form label {
+              display: block;
+              margin-bottom: 10px;
+            }
+            
+            .review-form input,
+            .review-form textarea {
+              width: 100%;
+              padding: 8px;
+              border: 1px solid #3C486B;
+              border-radius: 4px;
+              resize: vertical;
+              background-color: #F9D949;
+              color:#3C486B;
+            }
+            
+            .review-form button {
+              background-color: #F45050;
+              color: #F0F0F0;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              font-weight: bold;
+            }
+            
+            .review-form button:hover {
+              background-color: #45a049;
+            }
+
+            
+              .search-bar {
+                display: flex;
+                align-items: center;
+                width: 200px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                padding: 5px;
+                margin-left: 30px;
+              }
+            
+              .search-bar input {
+                flex: 1;
+                border: none;
+                padding: 5px;
+              }
+            
+              .search-bar .search-button {
+                background-color: #f45050;
+                border: none;
+                color: #fff;
+                padding: 5px;
+                cursor: pointer;
+              }
+            
+              .search-bar .search-button .icon {
+                font-size: 16px;
+                vertical-align: middle;
+              }
+            
+              .social-media{
+                display: flex;
+                top: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                gap: 30px;
+                justify-content: center;
+                flex-direction: row;
+                z-index: 999;
+               }
+
+               .title{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px;
+               }
+
+               .title p{
+                display: flex;
+                align-items: center;
+               }
+
+
+               .footer {
+                background-color: #3C486B;
+                color: #F0F0F0;
+               }
+
+               .book-card {
+                background-color: #F9D949;
+                padding: 10px;
+               }
+
+               .last {
+                display:block;
+                justify-content: center;
+                background-color: #F45050;
+                color:#F0F0F0;
+                height: 20px;
+               }
+
+               .button-move-up {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                color: #F0F0F0;
+                height: 20px;
+                
+               }
+        
+           
+          </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <img height="50" width="50" src="/bookworm_logo.png" alt="Logo"> |
+            <a href="#Bookstore">Bookstore</a> |
+            <a href="#Best-Selling">Best-Selling</a> |
+            <a href="#Recommendation">Recommendation</a> |
+            <a href="#Review">Review</a>
+        </nav>
+
+        <div class="color-scheme-select">
+          <h2>Select Color Scheme:</h2>
+          <button id="dark-mode-btn">Dark Mode</button>
+          <button id="light-mode-btn">Light Mode</button>
+      </div>
+
+        <div class="bkstore">
+        <section id="Bookstore">
+            <div class="intro-container">
+                <div class="cover-section">
+                  <img src="/cover-image-final.png" alt="Cover Image" class="cover-image">
+                </div>
+                <div class="info-section">
+                    <p class="subtitle">Page Turners' Special...</p>
+                  <h1 class="shop-name">Bookworm</h1>
+                  <p class="subtitle">Dig right into the unread series because<br>it is One Stop Destination to go right<br>into the Exciting World written on Pages!</p>
+                  <a href="#Best-Selling" class="button">Best Selling Books</a>
+                </div>
+              </div>
+        </section>
+        </div>
+
+        <section id="Best-Selling">
+            <img class="best1" height="150" width="150" src="/3d-bestselling-final.png" >
+            <h1 class="best">Best Selling</h1>
+            <h4 class="best1">"Unleash Your Imagination: Explore Our Best-Selling World of Words"
+            </h4>
+            <div class="cards">
+            <div class="c book-card">
+            <h3><button class="Focus">Add+</button>Atomic Habit</h3>
+              <div class="type">
+                <h4>Non-fiction</h4>
+              </div>
+              <div class="card">
+                <img src="/atomic-habit.jpg" alt="atomic habits">
+              </div>
+              <div class="price">
+                <h4>400/-</h4>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. X</p>
+              
+          </div>
+
+          <div class="c book-card">
+            <h3><button class="Focus">Add+</button>The Fault in Our Stars</h3>
+              <div class="type">
+                <h4>Fiction</h4>
+              </div>
+              <div class="card">
+                <img src="/Fault-in-our-stars.jpg" alt="atomic habits">
+              </div>
+              <div class="price">
+                <h4>320/-</h4>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              
+          </div>
+
+          <div class="c book-card">
+            <h3><button class="Focus">Add+</button>Wings of Fire</h3>
+              <div class="type">
+                <h4>Non-fiction</h4>
+              </div>
+              <div class="card">
+                <img src="/wings-of-fiction.jpg" alt="atomic habits">
+              </div>
+              <div class="price">
+                <h4>480/-</h4>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              
+          </div>
+
+          <div class="c book-card">
+            <h3><button class="Focus">Add+</button>Harry Potter-The prisoner of Askaban</h3>
+              <div class="type">
+                <h4>Fiction</h4>
+              </div>
+              <div class="card">
+                <img src="/HP-prisoner-of-askaban.jpg" alt="atomic habits">
+              </div>
+              <div class="price">
+                <h4>420/-</h4>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nam maxime provident vitae sed accusantium similiqu.</p>
+              
+          </div>  
+      </div>
+
+      <section id="Recommendation">
+        <img src="/3d-recommendation.jpg" alt="icon" class="best1" height="150" width="150">
+        <div class="best">
+          <h1>Recommendation</h1>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <button type="submit" class="search-button"><span class="icon">&#128269;</span></button>
+        </div>
+        <div class="cards">
+          <div class="c book-card">
+          <h3><button class="Focus">Add+</button>Harry Potter & the Philosopher's Stone</h3>
+            <div class="type">
+              <h4>Fiction</h4>
+            </div>
+            <div class="card">
+              <img src="/philosopher-stone.jpg" alt="Philosopher's Stone">
+            </div>
+            <div class="price">
+              <h4>700/-</h4>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            
+        </div>
+
+        <div class="c book-card">
+          <h3><button class="Focus">Add+</button>Lyrebird</h3>
+            <div class="type">
+              <h4>Fiction</h4>
+            </div>
+            <div class="card">
+              <img src="/lyrebird.jpg" alt="Lyrebird">
+            </div>
+            <div class="price">
+              <h4>420/-</h4>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, rerum delectus incidunt atque minus.</p>
+            
+        </div>
+
+        <div class="c book-card">
+          <h3><button class="Focus">Add+</button>Anne Frank-The Diary of a Young Girl</h3>
+            <div class="type">
+              <h4>Non-fiction</h4>
+            </div>
+            <div class="card">
+              <img src="/anne-frank.jpg" alt="Anne Frank">
+            </div>
+            <div class="price">
+              <h4>250/-</h4>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, rerum delectus incidunt atque minus</p>
+            
+        </div>
+
+        <div class="c book-card">
+          <h3><button class="Focus">Add+</button>The Girl on the Train</h3>
+            <div class="type">
+              <h4>Fiction</h4>
+            </div>
+            <div class="card">
+              <img src="/girl-on-the-train.jpg" alt="The Girl on the Train">
+            </div>
+            <div class="price">
+              <h4>220/-</h4>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            
+        </div>  
+    </div>
+      </section>
+
+        
+
+      <section id="Review">
+        <img src="/3d-review.png"best1" alt="review icon" height="150" width="150">
+        <h1 class="best">Review</h1>
+        <div class="review-card">
+          <img src="/person1.png" alt="Person 1">
+          <div class="review-details">
+            <h3>Person 1</h3>
+            <p>"Great book shop with a wide selection of titles. Highly recommended!"</p>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <img src="/person2.png" alt="Person 2">
+          <div class="review-details">
+            <h3>Person 2</h3>
+            <p>"Great book shop with a wide selection of titles. Highly recommended!"</p>
+          </div>
+
+        </div>
+
+        <div class="review-card">
+          <img src="/person3.png" alt="Person 3">
+          <div class="review-details">
+            <h3>Person 3</h3>
+            <p>"Great book shop with a wide selection of titles. Highly recommended!"</p>
+          </div>
+
+        </div>
+      
+        <div class="review-form">
+          <h2>Leave a Review</h2>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name please" required >
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email-id please" required>
+            
+            <label for="review">Review:</label>
+            <textarea id="review" name="review" placeholder="Enter Review please" required></textarea>
+            
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <div class="footer">
+        <div class="title">
+          <h2>Bookworm</h2>
+          <p>742, livre chemn, Paris, France</p>
+        </div>
+        <div class="title">
+          <h3>Bookshop</h3>
+          <p>Monday to Sunday from 10 am to 8 pm<br>
+          </p>
+        </div>
+        <div class="title">
+          <h3>Connect</h3>
+          <div class="social-media">
+            <a href="https://www.instagram.com/">
+            <img height="50" width="50" src="/insta-logo.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com/">
+            <img height="50" width="50" src="/fb-logo(1).png" alt="Facebook"></a>
+            <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin%3Flang%3Den">
+            <img height="50" width="50" src="/twitter-logo.png" alt="Twitter"></a>
+            <a href="https://web.whatsapp.com/">
+            <img height="50" width="50" src="/social-media-logo(1).png" alt="Email"></a>
+          </div>
+        </div>
+        <div class="last">
+          <a href="#Bookstore" class="button-move-up">Back-to-top</a>
+        </div>
+
+      </div>
+    </body>
+</html>
